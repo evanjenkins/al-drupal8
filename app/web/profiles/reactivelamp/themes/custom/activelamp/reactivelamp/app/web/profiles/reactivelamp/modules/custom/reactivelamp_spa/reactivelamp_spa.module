@@ -1,0 +1,16 @@
+<?php
+
+/**
+ * Implements hook_theme().
+ */
+function reactivelamp_spa_theme($existing, $type, $theme, $path) {
+  $theme = [
+    'spa' => [
+      'variables' => [
+        'props' => NULL
+      ]
+    ]
+  ];
+
+  return $theme;
+}

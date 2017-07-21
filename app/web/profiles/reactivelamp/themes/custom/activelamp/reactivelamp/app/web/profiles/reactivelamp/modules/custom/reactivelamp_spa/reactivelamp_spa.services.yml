@@ -1,0 +1,6 @@
+services:
+  reactivelamp_spa.json_service.default:
+    class: Drupal\reactivelamp_spa\Json\JsonService
+    arguments:
+      - '@http_client'
+      - '@config.factory'

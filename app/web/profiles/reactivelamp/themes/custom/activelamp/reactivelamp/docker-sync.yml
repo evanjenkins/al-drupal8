@@ -1,0 +1,21 @@
+version: "2"
+
+options:
+  verbose: true
+syncs:
+  docker-sync: # tip: add -sync and you keep consistent names as a convention
+    src: './app'
+    sync_userid: 33
+    sync_excludes:
+      - '.git'
+      - '.gitignore'
+      - '.idea'
+      - '.docker-sync'
+      - 'docker-sync.yml'
+      - 'docker-compose.yml'
+      - 'docker-compose-dev.yml'
+      - '.bundle'
+      - 'Gemfile'
+      - 'Gemfile.lock'
+    watch_excludes:
+      - '.*/.git'
