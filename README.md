@@ -31,7 +31,7 @@ The `app/web/profiles/reactivelamp/themes/custom/activelamp/reactivelamp` is a s
   
   ```sh
   $ git fetch frontend-upstream
-  $ git subtree pull --prefix app/web/profiles/reactivelamp/themes/custom/activelamp/reactivelamp master --squash
+  $ git subtree pull --prefix app/web/profiles/reactivelamp/themes/custom/activelamp/reactivelamp frontend-upstream master --squash
   ```
   
 3. To push subtree changes upstream to your fork:
