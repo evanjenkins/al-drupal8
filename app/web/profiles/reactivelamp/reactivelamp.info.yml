@@ -46,6 +46,7 @@ dependencies:
   - serialization
   - system
   - text
+  - taxonomy
   - token
   - toolbar
   - update

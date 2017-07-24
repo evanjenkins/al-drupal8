@@ -28,6 +28,7 @@
         "drupal/ctools": "^3.0",
         "drupal/devel": "^1.0@RC",
         "drupal/pathauto": "^1.0",
+        "drupal/redirect": "^1.0@alpha",
         "drupal/restui": "^1.15",
         "drush/drush": "~8.0",
         "webflo/drupal-finder": "^0.3.0",
