@@ -43,7 +43,7 @@ services:
 #      - codebase:/var/www/html
 # Options for macOS users (http://docs.docker4drupal.org/en/latest/macos)
 #      - codebase:/var/www/html:cached # User-guided caching
-      - docker-sync:/var/www/html:nocopy # Docker-sync
+      - ald8-sync:/var/www/html:nocopy # Docker-sync
 
   nginx:
 # wodby/drupal-nginx:[DRUPAL_VERSION]-[NGINX_VERSION]-[STABILITY_TAG].
@@ -64,11 +64,11 @@ services:
 #      - codebase:/var/www/html
 # Options for macOS users (http://docs.docker4drupal.org/en/latest/macos)
 #      - codebase:/var/www/html:cached # User-guided caching
-      - docker-sync:/var/www/html:nocopy # Docker-sync
+      - ald8-sync:/var/www/html:nocopy # Docker-sync
     labels:
-      - 'traefik.backend=nginx'
-      - 'traefik.port=80'
-      - 'traefik.frontend.rule=Host:activelamp.docker.localhost'
+      - traefik.backend=nginx
+      - traefik.port=80
+      - traefik.frontend.rule=Host:activelamp.docker.localhost
 
 #  apache:
 #    image: wodby/drupal-apache:2.4-1.0.2
@@ -144,9 +144,9 @@ services:
   mailhog:
     image: mailhog/mailhog
     labels:
-      - 'traefik.backend=mailhog'
-      - 'traefik.port=8025'
-      - 'traefik.frontend.rule=Host:mailhog.activelamp.docker.localhost'
+      - traefik.backend=mailhog
+      - traefik.port=8025
+      - traefik.frontend.rule=Host:mailhog.activelamp.docker.localhost
 
 #  nodejs:
 #    image: wodby/drupal-node:1.0-1.0.0
@@ -195,15 +195,15 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     labels:
-      - 'traefik.backend=portainer'
-      - 'traefik.port=9000'
-      - 'traefik.frontend.rule=Host:portainer.activelamp.docker.localhost'
+      - traefik.backend=portainer
+      - traefik.port=9000
+      - traefik.frontend.rule=Host:portainer.activelamp.docker.localhost
 
   traefik:
     image: traefik
     command: -c /dev/null --web --docker --logLevel=INFO
     ports:
-      - '8000:80'
+      - 8000:80
 #      - '8080:8080' # Dashboard
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
@@ -211,5 +211,5 @@ services:
 volumes:
   codebase:
 ## Docker-sync for macOS users
-  docker-sync:
+  ald8-sync:
     external: true
