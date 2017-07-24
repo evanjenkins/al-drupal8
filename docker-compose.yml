@@ -10,6 +10,8 @@ services:
       MYSQL_PASSWORD: drupal
     ports:
       - 3306:3306
+    volumes:
+      - d8-db:/var/lib/mysql/data
 #    volumes:
 #      - ./mariadb-init:/docker-entrypoint-initdb.d # Place init .sql file(s) here.
 #      - /path/to/mariadb/data/on/host:/var/lib/mysql # I want to manage volumes manually.
@@ -209,7 +211,7 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
 
 volumes:
-  codebase:
+  d8-db: {}
 ## Docker-sync for macOS users
   ald8-sync:
     external: true
