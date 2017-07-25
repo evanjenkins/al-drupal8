@@ -8,6 +8,7 @@ node_modules
 keys
 .DS_Store
 .sass-cache
+app/.docker-sync
 app/vendor
 app/web/core/
 app/web/drush/
