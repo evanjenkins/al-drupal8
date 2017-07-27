@@ -14,7 +14,6 @@ app/web/drush/
 app/web/example.gitignore
 app/web/libraries/
 app/web/modules/
-app/web/sites/development.services.yml
 app/web/sites/default/settings.local.php
 app/web/sites/example.settings.local.php
 app/web/sites/example.sites.php

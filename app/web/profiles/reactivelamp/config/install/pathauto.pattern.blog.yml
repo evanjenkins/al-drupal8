@@ -6,16 +6,15 @@ dependencies:
 id: blog
 label: Blog
 type: 'canonical_entities:node'
-pattern: '/blog/[node:title]'
+pattern: '/blog/[node:field_tag]/[node:title]'
 selection_criteria:
-  722cb895-9b48-49f3-b925-9c48deea2840:
+  37d2ebed-0007-477f-846f-2c33631d395a:
     id: node_type
     bundles:
       blog: blog
     negate: false
     context_mapping:
       node: node
-
 selection_logic: and
 weight: -5
 relationships: {  }
