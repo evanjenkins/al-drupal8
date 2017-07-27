@@ -3,7 +3,7 @@ version: "2"
 options:
   verbose: true
 syncs:
-  docker-sync: # tip: add -sync and you keep consistent names as a convention
+  ald8-sync: # tip: add -sync and you keep consistent names as a convention
     src: './app'
     sync_userid: 33
     sync_excludes:
