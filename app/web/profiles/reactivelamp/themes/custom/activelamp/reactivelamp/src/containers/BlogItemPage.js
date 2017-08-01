@@ -15,7 +15,7 @@ export class BlogItemPage extends React.Component {
   constructor(props, context) {
     super(props, context);
     this.state = {
-      blog: typeof drupalSettings.blog !== 'undefined' ? drupalSettings.blog : null,
+      blog: typeof drupalSettings.blog !== 'undefined' ? drupalSettings.blog : null, // eslint-disable-line no-undef
       nid: props.location.state
     };
   }

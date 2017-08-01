@@ -18,8 +18,8 @@ prod-lib:
   version: 0.0.1
   css:
     base:
-      reactivelamp/dist/css/styles.css: {}
+      reactivelamp/dist/main.css: {}
   js:
-    reactivelamp/dist/index.js: {}
+    reactivelamp/dist/main.js: {}
   dependencies:
     - core/drupalSettings

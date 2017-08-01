@@ -5,35 +5,27 @@ use Drupal\Core\Site\Settings;
 use Limenius\ReactRenderer\Renderer\PhpExecJsReactRenderer;
 use Limenius\ReactRenderer\Twig\ReactRenderExtension;
 use Limenius\ReactRenderer\Context\SymfonyContextProvider;
-use Twig_Extension_StringLoader;
+use Symfony\Component\HttpFoundation\RequestStack;
+use Twig_LoaderInterface;
 
 class ReactRenderer extends \Twig_Extension
 {
-  public function getName()
-  {
-    return 'react_component';
-  }
+  private $requestStack;
 
-  public function getFunctions()
-  {
-    return [
-      new \Twig_SimpleFunction('react_renderer', [$this, "getReactRenderer"])
-    ];
-  }
+  private $loader;
 
-  public function getReactRenderer()
+  public function __construct(RequestStack $requestStack, Twig_LoaderInterface $loader = null)
   {
+    $this->requestStack = $requestStack;
+    $this->loader = $loader;
     global $base_url;
     $environment = Settings::get('environment');
-    $requestStack = \Drupal::requestStack();
     // SymfonyContextProvider provides information about the current request, such as hostname and path
     // We need an instance of Symfony\Component\HttpFoundation\RequestStack to use it
     $url = $environment === 'dev' ? 'http://localhost:3000/bundle.js' : $base_url . '/bundle.js';
-    $contextProvider = new SymfonyContextProvider($requestStack);
+    $contextProvider = new SymfonyContextProvider($this->requestStack);
     $renderer = new PhpExecJsReactRenderer($url, false, $contextProvider);
     $ext = new ReactRenderExtension($renderer, $contextProvider, 'both');
-    return $ext;
-//    $twig->addExtension(new Twig_Extension_StringLoader());
-//    $twig->addExtension($ext);
+    $this->twigEnvironment->addExtension($ext);
   }
 }

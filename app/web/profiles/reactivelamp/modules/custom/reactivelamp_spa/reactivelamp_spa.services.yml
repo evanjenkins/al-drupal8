@@ -4,3 +4,24 @@ services:
     arguments:
       - '@http_client'
       - '@config.factory'
+  reactivelamp_spa.php_react_renderer:
+    class: Limenius\ReactRenderer\Renderer\PhpExecJsReactRenderer
+    factory:
+      - '@reactivelamp_spa.react_renderer_factory'
+      - 'createRenderer'
+  reactivelamp_spa.context_provider:
+    class: Limenius\ReactRenderer\Context\SymfonyContextProvider
+    arguments:
+      - '@request_stack'
+  reactivelamp_spa.react_renderer:
+    class: Limenius\ReactRenderer\Twig\ReactRenderExtension
+    tags:
+      - { name: twig.extension }
+    arguments:
+      - '@reactivelamp_spa.php_react_renderer'
+      - '@reactivelamp_spa.context_provider'
+      - 'both'
+  reactivelamp_spa.react_renderer_factory:
+    class: Drupal\reactivelamp_spa\Renderer\PhpExecJsReactRendererFactory
+    arguments:
+      - '@reactivelamp_spa.context_provider'

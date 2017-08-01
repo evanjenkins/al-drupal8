@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "1ccf0fc1a90b7b249c4ced6a49cf6dfe",
+    "content-hash": "60308f3f1fc7f9e31e57c5f55a0c50f2",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -1998,7 +1998,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://ftp.drupal.org/files/projects/redirect-8.x-1.0-alpha5.zip",
-                "reference": null,
+                "reference": "8.x-1.0-alpha5",
                 "shasum": "927aa4c8d8b40b0cd2442bee86f2f386d25e53ca"
             },
             "require": {
@@ -2723,6 +2723,55 @@
             "time": "2015-04-20T18:58:01+00:00"
         },
         {
+            "name": "limenius/react-renderer",
+            "version": "v0.14.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Limenius/ReactRenderer.git",
+                "reference": "ecf0043fd498a468288b7ef81379d9fde95361a8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Limenius/ReactRenderer/zipball/ecf0043fd498a468288b7ef81379d9fde95361a8",
+                "reference": "ecf0043fd498a468288b7ef81379d9fde95361a8",
+                "shasum": ""
+            },
+            "require": {
+                "nacmartin/phpexecjs": "^0.8",
+                "php": ">=5.5.0",
+                "twig/twig": "^1.20|^2.0"
+            },
+            "require-dev": {
+                "escapestudios/symfony2-coding-standard": "^2.9",
+                "squizlabs/php_codesniffer": "^2.5",
+                "wimg/php-compatibility": "^7.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Limenius\\ReactRenderer\\": "src/Limenius/ReactRenderer"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nacho Martin",
+                    "email": "nacho@limenius.com"
+                }
+            ],
+            "description": "Client and Server-side React rendering",
+            "keywords": [
+                "isomorphic",
+                "react",
+                "reactjs",
+                "twig"
+            ],
+            "time": "2017-07-08T15:53:56+00:00"
+        },
+        {
             "name": "masterminds/html5",
             "version": "2.2.2",
             "source": {
@@ -2786,6 +2835,42 @@
                 "xml"
             ],
             "time": "2016-09-22T11:01:11+00:00"
+        },
+        {
+            "name": "nacmartin/phpexecjs",
+            "version": "v0.8.7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/nacmartin/phpexecjs.git",
+                "reference": "f7f1c99b559ec63b9be37f2c356a21fd4856f726"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/nacmartin/phpexecjs/zipball/f7f1c99b559ec63b9be37f2c356a21fd4856f726",
+                "reference": "f7f1c99b559ec63b9be37f2c356a21fd4856f726",
+                "shasum": ""
+            },
+            "require": {
+                "symfony/process": "~2.3|~3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Nacmartin\\PhpExecJs": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "nacho",
+                    "email": "nacho@limenius.com"
+                }
+            ],
+            "description": "Run JavaScript code from PHP",
+            "time": "2016-09-28T08:36:23+00:00"
         },
         {
             "name": "nikic/php-parser",

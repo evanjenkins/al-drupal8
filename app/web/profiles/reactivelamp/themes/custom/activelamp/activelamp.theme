@@ -6,7 +6,7 @@ function activelamp_page_attachments_alter(&$attachments) {
   $environment = Settings::get('environment');
 
   if ($environment === 'dev') {
-    $attachments['#attached']['library'][] = "activelamp/dev-lib";
+    $attachments['#attached']['library'][] = "activelamp/prod-lib";
   }
 }
 

@@ -22,7 +22,8 @@ export default {
   output: {
     path: path.resolve(__dirname, 'dist'),
     publicPath: '/',
-    filename: '[name].[chunkhash].js'
+    // filename: '[name].[chunkhash].js'
+    filename: '[name].js'
   },
   plugins: [
     // Hash the files using MD5 so that their names change when the content changes.
@@ -32,7 +33,8 @@ export default {
     new webpack.DefinePlugin(GLOBALS),
 
     // Generate an external css file with a hash in the filename
-    new ExtractTextPlugin('[name].[contenthash].css'),
+    // new ExtractTextPlugin('[name].[contenthash].css'),
+    new ExtractTextPlugin('[name].css'),
 
     // Generate HTML file that contains references to generated bundles. See here for how this works: https://github.com/ampedandwired/html-webpack-plugin#basic-usage
     new HtmlWebpackPlugin({
@@ -60,15 +62,16 @@ export default {
     new webpack.optimize.UglifyJsPlugin({ sourceMap: true }),
 
     new webpack.LoaderOptionsPlugin({
-      minimize: true,
+      minimize: false,
       debug: false,
       noInfo: true, // set to false to see a list of every file being bundled.
+      outputStyle: 'compact',
       options: {
         sassLoader: {
           includePaths: [
             path.resolve(__dirname, 'src', 'scss'),
             path.resolve(__dirname, 'node_modules/foundation-sites/scss')
-          ]
+          ],
         },
         context: '/',
         postcss: () => [autoprefixer],
