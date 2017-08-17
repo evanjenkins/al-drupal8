@@ -28,7 +28,7 @@
         "drupal/ctools": "^3.0",
         "drupal/devel": "^1.0@RC",
         "drupal/pathauto": "^1.0",
-        "drupal/redirect": "^1.0@alpha",
+        "drupal/redirect": "1.0.0-alpha5 as 8.0",
         "drupal/restui": "^1.15",
         "drush/drush": "~8.0",
         "limenius/react-renderer": "^0.14.2",
